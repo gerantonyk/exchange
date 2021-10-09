@@ -22,6 +22,7 @@ input {
 .components {
   display: flex;
   flex-wrap: wrap;
+  flex-direction: column;
 
   > div {
     background-color: #eee;
