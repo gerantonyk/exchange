@@ -12,17 +12,11 @@ const ec = new EC('secp256k1');
 app.use(cors());
 app.use(express.json());
 
-// const key = ec.genKeyPair();
-// const privKey  = key.getPrivate().toString(16)//toHex;
-// console.log("PrivateKey",privKey);
-// const publicKey  = key.getPublic().encode('hex');
-// console.log("PublicKey",publicKey.toUpperCase());
-// const publicKey2 = ec.keyFromPrivate(privKey.toUpperCase()).getPublic().encode('hex')
-// console.log("public",publicKey2)
 initialAccounts = []
 for (let i = 0; i < 3; i++) {
   let key = ec.genKeyPair()
   initialAccounts.push(key.getPublic().encode('hex').toUpperCase());
+  //Keys
   console.log('privada',key.getPrivate().toString(16))
   console.log('publica',key.getPublic().encode('hex'))
 }
